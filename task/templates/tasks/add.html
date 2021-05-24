@@ -1,0 +1,13 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+    <h1>Add Task</h1>
+        <form action="{% url 'tasks:add' %}" method="post">
+            {{ form }}
+            <input type="submit">
+            {% crf_token %}
+        </form>
+        <a href="{% url 'tasks:index' %}">View Tasks</a> <!--django has a function which will find a path from all files and it will directed to word path-->
+        <!--{% url 'tasks:index' %} this will help you to find out index from app tasks-->
+{% endblock %}
+    
